@@ -1,0 +1,90 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#app {
+    padding: 15px;
+    background: #303030;
+    color: #f7f7f7;
+}
+
+.titlePage {
+    color: rgba(255, 255, 255, 0.87);
+    text-align: center;
+    font-size: 36px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.containTask {
+    width: calc((100% / 7) - (15px * 6));
+    height: 200px;
+    background: #424242;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: 350ms ease-in-out;
+    margin-top: 15px;
+}
+
+.titleTask {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.containCategDateTask {
+    display: grid;
+    width: 100%;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1px 1fr;
+    position: relative;
+}
+
+.containCategDateTask:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #f7f7f7;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+}
+
+.categTask {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.separatorCategDate {
+    width: 1px;
+    height: 100%;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+}
+
+.dateTask {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.56);
+}
+
+.contentTask {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.56);
+}
