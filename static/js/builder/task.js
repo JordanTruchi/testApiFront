@@ -3,7 +3,12 @@ import { seeOneTask } from '../action/task.js';
 export function buildTask(task) {
     let containTask = document.createElement('div');
     containTask.classList.add('containTask');
-    containTask.id = task.id;
+    containTask.id = 'task_'+task.id;
+
+    let imageTask = document.createElement('img');
+    imageTask.classList.add('imageTask');
+    imageTask.src = task.images[0].url;
+    imageTask.title = task.images[0].name;
 
     let titleTask = document.createElement('h2');
     titleTask.classList.add('titleTask');
@@ -29,7 +34,7 @@ export function buildTask(task) {
 
     let contentTask = document.createElement('p');
     contentTask.classList.add('contentTask');
-    contentTask.innerHTML = task.content;
+    contentTask.innerHTML = task.content.trunc(true);
 
     let seeMoreTask = document.createElement('div');
     seeMoreTask.classList.add('seeMoreTask');
@@ -37,6 +42,7 @@ export function buildTask(task) {
 
     seeMoreTask.addEventListener('click', () => seeOneTask(task.id));
 
+    containTask.append(imageTask);
     containTask.append(titleTask);
     containTask.append(containCategDateTask);
     containTask.append(contentTask);
@@ -48,3 +54,13 @@ export function buildTask(task) {
 export function appendTask(task, container) {
     container.append(task);
 }
+
+
+String.prototype.trunc =
+     function(useWordBoundary, numberToHave = 100) {
+         if (this.length <= numberToHave) { return this; }
+         var subString = this.substr(0, numberToHave-1);
+         return (useWordBoundary 
+            ? subString.substr(0, subString.lastIndexOf(' ')) 
+            : subString) + "&hellip;";
+};
