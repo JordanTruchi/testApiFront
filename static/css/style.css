@@ -225,7 +225,7 @@ p {
 }
 
 .patchContainer {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .containAllPatchTask {
@@ -241,7 +241,9 @@ p {
     font-size: 1.5em;
     color: rgba(255, 255, 255, 0.87);
     position: sticky;
+    margin-top: 50px;
     top: 20px;
+    width: 100%;
 }
 
 .containPatchTask {
@@ -335,4 +337,64 @@ p {
 
 .deleteButton:hover {
     background: transparent;
+}
+
+.oneViewComeBack {
+    position: absolute;
+    font-size: 64px;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+.oneViewContainImg {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin-top: 25px;
+}
+
+.oneViewImageTask {
+    max-width: 500px;
+    margin: auto;
+}
+
+.oneViewTitleTask {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 25px;
+}
+
+.oneViewContainCategDateTask {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+}
+
+.oneViewCategTask {
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.oneViewSeparatorCategDate {
+    width: 2px;
+    height: 20px;
+    background: #3e50b4;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.oneViewDateTask {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.56);
+    
+}
+
+.oneViewContentTask {
+    text-align: center;
+    margin-top: 50px;
 }

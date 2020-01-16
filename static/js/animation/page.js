@@ -5,7 +5,8 @@ export function animationInDom(gContainer) {
     {
         x: 0,
         opacity: 1,
-        ease: "power3.inOut",
+        ease: "power1.inOut",
+        duration: 0.550,
         delay: 0.850,
         onStart: () => {
             gContainer.style.display = 'block';
@@ -20,8 +21,9 @@ export function animationOutDom(gContainer) {
     {
         x: '100%',
         opacity: 0,
-        ease: "power3.inOut",
-        delay: 0.350,
+        ease: "power1.inOut",
+        duration: 0.550,
+        delay: 0.550,
         onComplete: () => {
             gContainer.style.display = 'none';
         }
@@ -36,28 +38,24 @@ export function animationMenuToCross(circleMenu, bar1, bar2, bar3) {
         background: 'rgba(255, 255, 255, 0)',
         boxShadow: 'none',
         ease: "power1.in",
-        delay: 0.350
     })
     .to(bar1, 
     {
         background: '#3e50b4',
         ease: "power1.in",
-        rotate: -45,
-        delay: 0.350
-    }, '<')
+        rotate: -45
+    })
     .to(bar2, 
     {
         background: 'rgba(255, 255, 255, 0)',
-        ease: "power1.in",
-        delay: 0.350
-    }, '<')
+        ease: "power1.in"
+    })
     .to(bar3, 
     {
         background: '#3e50b4',
         ease: "power1.in",
-        rotate: 45,
-        delay: 0.350
-    }, '<');
+        rotate: 45
+    });
 }
 
 export function animationCrossToMenu(circleMenu, bar1, bar2, bar3) {
@@ -93,3 +91,16 @@ export function animationCrossToMenu(circleMenu, bar1, bar2, bar3) {
 }
 
 
+export function animationHideMenu(circleMenu) {
+    let tl = gsap.timeline();
+    tl.
+    to(circleMenu, 
+    {
+        opacity: 0,
+        ease: "power1.in",
+        delay: 0.350,
+        onComplete: () => {
+            circleMenu.style.display = 'none';
+        }
+    });
+}
